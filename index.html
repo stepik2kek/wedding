@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="Приглашение на свадьбу Степана и Дарьи — 17 октября 2026" />
+  <title>Степан & Дарья — 17.10.2026</title>
+  <style>
+    :root{
+      --bg:#090909;
+      --panel:#101010;
+      --text:#f4f1ea;
+      --muted:#a9a59d;
+      --line:rgba(244,241,234,.18);
+      --soft:#d9d2c5;
+      --max:860px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,255,255,.055), transparent 30%),
+        radial-gradient(circle at 100% 42%, rgba(255,255,255,.035), transparent 28%),
+        var(--bg);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    .wrap{width:min(calc(100% - 36px),var(--max));margin:0 auto}
+    .hero{
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid var(--line);
+    }
+    .hero::before,.hero::after{
+      content:"";position:absolute;border:1px solid rgba(244,241,234,.12);border-radius:50%;pointer-events:none
+    }
+    .hero::before{width:460px;height:460px;left:-340px;top:-120px}
+    .hero::after{width:600px;height:600px;right:-470px;bottom:-250px}
+    .eyebrow{font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+    .names{
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight:400;
+      font-size:clamp(58px,13vw,116px);
+      line-height:.9;
+      letter-spacing:-.045em;
+      margin:0;
+    }
+    .amp{font-style:italic;color:var(--soft);font-size:.72em;padding:0 .08em}
+    .hero-line{width:1px;height:76px;background:var(--line);margin:36px auto}
+    .invite{font-family:Georgia,'Times New Roman',serif;font-size:clamp(24px,5.4vw,38px);font-weight:400;margin:0 0 16px}
+    .date-big{font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--soft)}
+    .scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#777}
+
+    section{padding:92px 0;border-bottom:1px solid var(--line)}
+    .section-no{font-size:11px;color:#6e6e6e;letter-spacing:.26em;text-transform:uppercase;margin-bottom:18px}
+    h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(34px,7vw,58px);line-height:1.04;margin:0 0 34px;letter-spacing:-.025em}
+    .schedule{display:grid;gap:0;border-top:1px solid var(--line)}
+    .row{display:grid;grid-template-columns:92px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+    .time{font-family:Georgia,'Times New Roman',serif;font-size:30px}
+    .row strong{font-size:16px;font-weight:500;display:block;margin-bottom:6px}
+    .row span{font-size:14px;color:var(--muted);line-height:1.5}
+
+    .venue-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:54px;align-items:end}
+    .venue-name{font-family:Georgia,'Times New Roman',serif;font-size:clamp(34px,7vw,58px);line-height:1.05;margin:0 0 18px}
+    .venue-address{color:var(--muted);line-height:1.65;margin:0}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:12px;
+      min-height:58px;padding:0 24px;border:1px solid var(--text);text-decoration:none;
+      text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:700;
+      transition:.2s ease;background:transparent;color:var(--text);cursor:pointer
+    }
+    .btn:hover{background:var(--text);color:#0a0a0a}
+    .btn.full{width:100%}
+
+    .dress{background:var(--text);color:#0b0b0b}
+    .dress .section-no{color:#777}
+    .dress h2{font-size:clamp(52px,12vw,104px);text-transform:uppercase;letter-spacing:-.06em;margin-bottom:24px}
+    .dress p{font-family:Georgia,'Times New Roman',serif;font-size:clamp(20px,4vw,28px);line-height:1.45;max-width:680px;margin:0}
+    .black-strip{height:78px;background:#000;margin-top:48px;border:1px solid #222;position:relative;overflow:hidden}
+    .black-strip::after{content:"TOTAL BLACK  •  TOTAL BLACK  •  TOTAL BLACK  •  TOTAL BLACK";position:absolute;white-space:nowrap;left:22px;top:50%;transform:translateY(-50%);color:#444;font-size:11px;letter-spacing:.28em}
+
+    form{display:grid;gap:22px;max-width:620px}
+    .field label,.label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-bottom:10px}
+    input,textarea{
+      width:100%;border:0;border-bottom:1px solid #4d4d4d;background:transparent;color:var(--text);
+      border-radius:0;padding:13px 0 14px;font:inherit;font-size:18px;outline:none
+    }
+    input:focus,textarea:focus{border-bottom-color:var(--text)}
+    textarea{min-height:92px;resize:vertical}
+    input::placeholder,textarea::placeholder{color:#565656}
+    .radio-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .choice{position:relative}
+    .choice input{position:absolute;opacity:0;pointer-events:none}
+    .choice label{display:flex;align-items:center;justify-content:center;min-height:54px;border:1px solid #434343;cursor:pointer;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:.2s}
+    .choice input:checked + label{background:var(--text);color:#0a0a0a;border-color:var(--text)}
+    .count-wrap{display:none}
+    .count-wrap.show{display:block}
+    .count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .count-choice{position:relative}
+    .count-choice input{position:absolute;opacity:0;pointer-events:none}
+    .count-choice label{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;max-height:72px;border:1px solid #434343;cursor:pointer;font-family:Georgia,'Times New Roman',serif;font-size:26px;transition:.2s}
+    .count-choice input:checked + label{background:var(--text);color:#0a0a0a;border-color:var(--text)}
+    .guest-list{display:grid;gap:18px;margin-top:22px}
+    .guest-list:empty{display:none}
+    .guest-index{font-family:Georgia,'Times New Roman',serif;color:#777;font-size:13px;margin-right:8px}
+    .decline-wrap{display:none}
+    .decline-wrap.show{display:block}
+    .form-note{font-size:12px;line-height:1.6;color:#777;margin:0}
+    .status{display:none;padding:15px 17px;border:1px solid var(--line);font-size:14px;line-height:1.5}
+    .status.show{display:block}
+    .status.ok{border-color:#5b745f}
+    .status.err{border-color:#7c5555}
+
+    footer{padding:70px 0 90px;text-align:center}
+    .footer-date{font-family:Georgia,'Times New Roman',serif;font-size:24px;margin-bottom:14px}
+    .footer-small{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#6e6e6e}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.on{opacity:1;transform:none}
+
+    @media (max-width:680px){
+      .wrap{width:min(calc(100% - 28px),var(--max))}
+      section{padding:72px 0}
+      .venue-grid{grid-template-columns:1fr;gap:30px}
+      .row{grid-template-columns:78px 1fr;gap:16px}
+      .time{font-size:25px}
+      .radio-grid{grid-template-columns:1fr}
+      .count-grid{grid-template-columns:repeat(4,1fr)}
+      .hero-line{height:56px;margin:30px auto}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="wrap reveal">
+        <div class="eyebrow">Wedding invitation</div>
+        <h1 class="names">Степан <span class="amp">&</span> Дарья</h1>
+        <div class="hero-line"></div>
+        <p class="invite">Приглашаем вас на нашу свадьбу</p>
+        <div class="date-big">17 октября 2026</div>
+      </div>
+      <div class="scroll">листайте вниз</div>
+    </section>
+
+    <section>
+      <div class="wrap reveal">
+        <div class="section-no">01 — Время</div>
+        <h2>17 октября<br>2026 года</h2>
+        <div class="schedule">
+          <div class="row">
+            <div class="time">15:00</div>
+            <div><strong>Сбор гостей</strong></div>
+          </div>
+          <div class="row">
+            <div class="time">16:00</div>
+            <div><strong>Начало мероприятия</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap venue-grid reveal">
+        <div>
+          <div class="section-no">02 — Место</div>
+          <p class="venue-name">Загородный клуб «Скандинавия»</p>
+          <p class="venue-address">Сестрорецк<br>Парковая улица, 16</p>
+        </div>
+        <div>
+          <a class="btn full" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%97%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BB%D1%83%D0%B1%20%D0%A1%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%BD%D0%B0%D0%B2%D0%B8%D1%8F%2C%20%D0%A1%D0%B5%D1%81%D1%82%D1%80%D0%BE%D1%80%D0%B5%D1%86%D0%BA%2C%20%D0%9F%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F%2016">Открыть в Яндекс Картах ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dress">
+      <div class="wrap reveal">
+        <div class="section-no">03 — Dress code</div>
+        <h2>Total Black</h2>
+        <p>Просим поддержать дресс-код вечера и выбрать полностью чёрный образ.</p>
+        <div class="black-strip" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section id="rsvp">
+      <div class="wrap reveal">
+        <div class="section-no">04 — RSVP</div>
+        <h2>Подтвердите<br>присутствие</h2>
+        <form id="rsvpForm" novalidate>
+          <div>
+            <span class="label">Сможете присутствовать?</span>
+            <div class="radio-grid">
+              <div class="choice">
+                <input type="radio" id="yes" name="attendance" value="+" required />
+                <label for="yes">Да, будем</label>
+              </div>
+              <div class="choice">
+                <input type="radio" id="no" name="attendance" value="-" />
+                <label for="no">К сожалению, нет</label>
+              </div>
+            </div>
+          </div>
+
+          <div id="countWrap" class="count-wrap">
+            <span class="label">Сколько гостей будет?</span>
+            <div class="count-grid" aria-label="Количество гостей">
+              <div class="count-choice">
+                <input type="radio" id="count1" name="guestCount" value="1" />
+                <label for="count1">1</label>
+              </div>
+              <div class="count-choice">
+                <input type="radio" id="count2" name="guestCount" value="2" />
+                <label for="count2">2</label>
+              </div>
+              <div class="count-choice">
+                <input type="radio" id="count3" name="guestCount" value="3" />
+                <label for="count3">3</label>
+              </div>
+              <div class="count-choice">
+                <input type="radio" id="count4" name="guestCount" value="4" />
+                <label for="count4">4</label>
+              </div>
+            </div>
+            <div id="guestList" class="guest-list"></div>
+          </div>
+
+          <div id="declineWrap" class="decline-wrap field">
+            <label for="declineName">Имя и фамилия</label>
+            <input id="declineName" autocomplete="name" placeholder="Иван Иванов" />
+          </div>
+
+          <button class="btn full" type="submit">Подтвердить</button>
+          <p class="form-note">Если вы будете на свадьбе, укажите имена и фамилии всех гостей — так мы никого не потеряем в списке.</p>
+          <div id="status" class="status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap reveal">
+      <div class="footer-date">Степан & Дарья</div>
+      <div class="footer-small">17 • 10 • 2026</div>
+    </div>
+  </footer>
+
+  <script>
+    // После публикации Google Apps Script вставьте URL веб-приложения между кавычек.
+    // Пример: const RSVP_ENDPOINT = 'https://script.google.com/macros/s/XXXX/exec';
+    const RSVP_ENDPOINT = '';
+
+    const form = document.getElementById('rsvpForm');
+    const statusBox = document.getElementById('status');
+    const attendanceInputs = document.querySelectorAll('input[name="attendance"]');
+    const countInputs = document.querySelectorAll('input[name="guestCount"]');
+    const countWrap = document.getElementById('countWrap');
+    const guestList = document.getElementById('guestList');
+    const declineWrap = document.getElementById('declineWrap');
+    const declineName = document.getElementById('declineName');
+
+    function clearGuestCount() {
+      countInputs.forEach(input => input.checked = false);
+      guestList.innerHTML = '';
+    }
+
+    function renderGuestFields(count) {
+      guestList.innerHTML = '';
+      for (let i = 1; i <= count; i++) {
+        const field = document.createElement('div');
+        field.className = 'field';
+        field.innerHTML = `
+          <label for="guest${i}"><span class="guest-index">0${i}</span> Имя и фамилия гостя</label>
+          <input id="guest${i}" class="guest-name" autocomplete="name" placeholder="Имя Фамилия" required />
+        `;
+        guestList.appendChild(field);
+      }
+    }
+
+    attendanceInputs.forEach(input => input.addEventListener('change', () => {
+      const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
+      statusBox.className = 'status';
+
+      if (attendance === '+') {
+        countWrap.classList.add('show');
+        declineWrap.classList.remove('show');
+        declineName.required = false;
+        declineName.value = '';
+      } else {
+        countWrap.classList.remove('show');
+        declineWrap.classList.add('show');
+        declineName.required = true;
+        clearGuestCount();
+      }
+    }));
+
+    countInputs.forEach(input => input.addEventListener('change', () => {
+      renderGuestFields(Number(input.value));
+    }));
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      statusBox.className = 'status';
+
+      const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
+      if (!attendance) {
+        statusBox.textContent = 'Выберите, сможете ли вы присутствовать.';
+        statusBox.className = 'status show err';
+        return;
+      }
+
+      let payload;
+
+      if (attendance === '+') {
+        const selectedCount = document.querySelector('input[name="guestCount"]:checked');
+        if (!selectedCount) {
+          statusBox.textContent = 'Выберите количество гостей.';
+          statusBox.className = 'status show err';
+          return;
+        }
+
+        const names = [...document.querySelectorAll('.guest-name')].map(input => input.value.trim());
+        if (names.some(name => !name)) {
+          statusBox.textContent = 'Укажите имя и фамилию каждого гостя.';
+          statusBox.className = 'status show err';
+          document.querySelector('.guest-name:invalid, .guest-name:not(:placeholder-shown)')?.focus();
+          return;
+        }
+
+        payload = {
+          attendance: '+',
+          guests: Number(selectedCount.value),
+          names
+        };
+      } else {
+        if (!declineName.value.trim()) {
+          statusBox.textContent = 'Укажите имя и фамилию.';
+          statusBox.className = 'status show err';
+          declineName.focus();
+          return;
+        }
+
+        payload = {
+          attendance: '-',
+          guests: 0,
+          names: [declineName.value.trim()]
+        };
+      }
+
+      if (!RSVP_ENDPOINT) {
+        statusBox.innerHTML = '<strong>Форма готова.</strong><br>Осталось один раз опубликовать Google Apps Script и вставить его адрес в сайт — после этого ответы будут уходить в вашу таблицу.';
+        statusBox.className = 'status show ok';
+        return;
+      }
+
+      const button = form.querySelector('button[type="submit"]');
+      const oldText = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Отправляем…';
+
+      try {
+        await fetch(RSVP_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {'Content-Type': 'text/plain;charset=utf-8'},
+          body: JSON.stringify(payload)
+        });
+
+        statusBox.textContent = 'Спасибо! Ваш ответ сохранён.';
+        statusBox.className = 'status show ok';
+        form.reset();
+        countWrap.classList.remove('show');
+        declineWrap.classList.remove('show');
+        clearGuestCount();
+      } catch (error) {
+        statusBox.textContent = 'Не получилось отправить ответ. Попробуйте ещё раз чуть позже.';
+        statusBox.className = 'status show err';
+      } finally {
+        button.disabled = false;
+        button.textContent = oldText;
+      }
+    });
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('on');
+      });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
